@@ -3,7 +3,7 @@
 
   <mat-form-field class="search-bar" appearance="fill">
     <mat-label>Search products</mat-label>
-    <input matInput [(ngModel)]="searchQuery" (change)="search()" placeholder="Enter product name">
+    <input matInput [(ngModel)]="searchQuery" (keyup)="search()" placeholder="Enter product name">
     <button mat-button matSuffix aria-label="Search" (click)="search()">
       <mat-icon>search</mat-icon>
     </button>
