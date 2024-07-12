@@ -1,1 +1,33 @@
-<p>home works!</p>
+<div class="home-page">
+  <!-- Banner Section -->
+  <section class="banner-section">
+    <div class="banner-content">
+      <h1 class="banner-heading">Welcome to Our Store</h1>
+      <p class="banner-description">
+        Explore our wide range of products from electronics to fashion and more.
+        Start your shopping experience with us today!
+      </p>
+    </div>
+    <img optimizedImage  class="banner-image" src="../../../assets/images/banner.jpg" alt="Home Banner Image">
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="featured-products">
+    <div class="featured-products-container">
+      <h2 class="section-heading">Featured Products</h2>
+      <div class="product-list">
+        <div class="product-item" *ngFor="let product of featuredProducts">
+          <mat-card class="product-card">
+            <mat-card-header>
+              <mat-card-title>{{ product.title }}</mat-card-title>
+            </mat-card-header>
+            <img optimizedImage  mat-card-image  [src]="product.image" alt="{{ product.title }}">
+            <mat-card-content>
+              <p>{{ product.description }}</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

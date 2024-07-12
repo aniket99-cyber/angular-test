@@ -1,32 +1,29 @@
 <div class="product-listing">
-  <mat-card>
-    <mat-card-title>Product Listing</mat-card-title>
-    <mat-card-content>
-      <mat-form-field appearance="fill">
-        <mat-label>Search products</mat-label>
-        <input matInput [(ngModel)]="searchQuery" />
-      </mat-form-field>
-      <button mat-raised-button color="primary" (click)="search()">Search</button>
-    </mat-card-content>
-  </mat-card>
-  <div class="container">
-    <div class="col-12">
-      <div class="col-sm-3" *ngFor="let product of products">
-        <div class="product-listing" [routerLink]="['/product-details', product.id]">
-            <mat-card >
-              <mat-card-header>
-                <mat-card-title>{{ product.title }}</mat-card-title>
-              </mat-card-header>
-              <img mat-card-image [src]="product.image" alt="{{ product.title }}" />
-              <mat-card-content>
-                <p>{{ product.description }}</p>
-              </mat-card-content>
-            </mat-card>
+  <h2 class="page-heading">Product Listing</h2>
+
+  <mat-form-field class="search-bar" appearance="fill">
+    <mat-label>Search products</mat-label>
+    <input matInput [(ngModel)]="searchQuery" (change)="search()" placeholder="Enter product name">
+    <button mat-button matSuffix aria-label="Search" (click)="search()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <div class="product-grid">
+    <div class="product-item" *ngFor="let product of products">
+      <div class="product-card" [routerLink]="['/product-details', product.id]">
+        <div class="product-image">
+          <img [src]="product.image" alt="{{ product.title }}">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">{{ product.title }}</h3>
+          <p class="product-description">{{ product.description }}</p>
+          <div class="product-specs">
+            <p class="product-spec">Screen Size: {{ product.inch ? product.inch + ' inch' : 'N/A' }}</p>
+            <p class="product-spec">Display Type: {{ product.displayType ? product.displayType : 'N/A' }}</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-

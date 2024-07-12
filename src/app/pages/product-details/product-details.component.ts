@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from 'src/app/guards/product.service';
+import { ProductService } from 'src/app/services/product.service';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({

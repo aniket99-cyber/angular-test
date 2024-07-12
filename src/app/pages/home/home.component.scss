@@ -1,0 +1,73 @@
+.home-page {
+  font-family: Arial, sans-serif;
+}
+
+.banner-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh; /* Adjust height as needed */
+  background-color: #3f51b5; /* Example banner background color */
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-content {
+  text-align: center;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.banner-heading {
+  font-size: 36px;
+  margin-top: 0;
+}
+
+.banner-description {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6; /* Adjust opacity as desired */
+}
+
+.featured-products {
+  padding: 20px;
+  background-color: #f0f0f0; /* Example background color for featured products section */
+}
+
+.featured-products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product-item {
+  width: 30%; /* Adjust as needed for responsive design */
+  margin-bottom: 20px;
+}
+
+.product-card {
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -4,9 +4,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
-import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
-import { ProductService } from 'src/app/guards/product.service';
+import {MatIconModule} from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductService } from 'src/app/services/product.service';
 import { RouterLink } from '@angular/router';
+import { OptimizedImageDirective } from 'src/app/directives/optimized-image.directive';
 
 @Component({
   selector: 'app-product-listing',
@@ -19,7 +21,8 @@ import { RouterLink } from '@angular/router';
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    RouterLink
+    MatIconModule,
+    RouterLink,
   ],
   templateUrl: './product-listing.component.html',
   styleUrls: ['./product-listing.component.scss']

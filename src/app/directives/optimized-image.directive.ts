@@ -5,8 +5,8 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 })
 export class OptimizedImageDirective implements OnInit {
   @Input() src: string ='';
-  @Input() placeholder: string = 'assets/placeholder.jpg';
-  @Input() fallback: string = 'assets/fallback.jpg';
+  @Input() placeholder: string = '../../assets/images/placeholder-image.jpg';
+  @Input() fallback: string = '../../assets/images/placeholder-image.jpg';
 
   constructor(private el: ElementRef) {}
 
