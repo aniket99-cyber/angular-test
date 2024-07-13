@@ -65,7 +65,7 @@ export class ProductService {
       id: 9,
       title: 'External Hard Drive',
       description: 'High-capacity external hard drive with USB 3.0 connectivity, fast data transfer speeds, and durable design. Store and backup your important files securely.',
-      image: '../../assets/drive.jpg',
+      image: '../../assets/images/drive.jpg',
     },
     {
       id: 10,

@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { AuthService } from './services/auth.service';
 
 
 @Component({
@@ -19,7 +20,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class AppComponent {
   title = 'angular-machine-test';
-
+  private authService= inject(AuthService)
   constructor(private router: Router,) {}
 
   navigateTo(path: string) {
@@ -27,6 +28,6 @@ export class AppComponent {
   }
 
   logout() {
-    //this.authService.logout();
+    this.authService.logout();
   }
 }

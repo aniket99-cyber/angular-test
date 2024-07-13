@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -23,18 +23,23 @@ import { OptimizedImageDirective } from 'src/app/directives/optimized-image.dire
     FormsModule,
     MatIconModule,
     RouterLink,
+    OptimizedImageDirective,
   ],
   templateUrl: './product-listing.component.html',
   styleUrls: ['./product-listing.component.scss']
 })
 
-export class ProductListingComponent {
+export class ProductListingComponent implements OnInit {
   products:any = [];
   searchQuery = '';
   private productService= inject(ProductService)
 
   constructor() {
     this.products = this.productService.getProducts() || [];
+  }
+
+  ngOnInit(){
+
   }
 
   search() {

@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-machine-test",
+            "outputPath": "dist/angular-machine-test/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -108,6 +108,61 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/angular-machine-test/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "angular-machine-test:build:development",
+              "serverTarget": "angular-machine-test:server:development"
+            },
+            "production": {
+              "browserTarget": "angular-machine-test:build:production",
+              "serverTarget": "angular-machine-test:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-machine-test:build:production",
+              "serverTarget": "angular-machine-test:server:production"
+            },
+            "development": {
+              "browserTarget": "angular-machine-test:build:development",
+              "serverTarget": "angular-machine-test:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
